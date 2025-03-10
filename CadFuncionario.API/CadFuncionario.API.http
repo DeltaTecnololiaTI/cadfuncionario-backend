@@ -1,0 +1,6 @@
+@CadFuncionario.API_HostAddress = http://localhost:5037
+
+GET {{CadFuncionario.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

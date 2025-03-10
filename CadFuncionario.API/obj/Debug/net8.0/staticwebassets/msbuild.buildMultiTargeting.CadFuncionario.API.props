@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CadFuncionario.API.props" />
+</Project>

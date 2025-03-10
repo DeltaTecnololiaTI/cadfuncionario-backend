@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CadFuncionario.API</name>
+    </assembly>
+    <members>
+        <member name="T:CadFuncionario.API.Controllers.AuthController">
+            <summary>
+            Controlador responsável pela autenticação de usuários.
+            </summary>
+        </member>
+        <member name="M:CadFuncionario.API.Controllers.AuthController.Login(CadFuncionario.API.Controllers.LoginDTO)">
+            <summary>
+            Autentica um usuário e gera um token JWT.
+            </summary>
+            <param name="login">Objeto contendo credenciais do usuário.</param>
+            <returns>Token JWT se a autenticação for bem-sucedida.</returns>
+            <response code="200">Retorna o token JWT quando a autenticação é bem-sucedida.</response>
+            <response code="401">Retorna erro se as credenciais forem inválidas.</response>
+        </member>
+        <member name="T:CadFuncionario.API.Controllers.LoginDTO">
+            <summary>
+            Objeto de transferência para autenticação de usuário.
+            </summary>
+        </member>
+        <member name="P:CadFuncionario.API.Controllers.LoginDTO.Username">
+            <summary>
+            Nome de usuário para autenticação.
+            </summary>
+        </member>
+        <member name="P:CadFuncionario.API.Controllers.LoginDTO.Password">
+            <summary>
+            Senha do usuário.
+            </summary>
+        </member>
+        <member name="M:CadFuncionario.API.Controllers.FuncionarioController.CriarFuncionario(CadFuncionario.Application.DTOs.FuncionarioDTO)">
+            <summary>
+            Cria um novo funcionário.
+            </summary>
+            <param name="funcionarioDTO">Dados do funcionário a ser criado.</param>
+            <returns>O funcionário criado.</returns>
+            <response code="201">Funcionário criado com sucesso.</response>
+            <response code="400">Dados inválidos.</response>
+        </member>
+        <member name="M:CadFuncionario.API.Controllers.FuncionarioController.ObterFuncionarioPorId(System.Int32)">
+            <summary>
+            Obtém um funcionário pelo ID.
+            </summary>
+            <param name="id">ID do funcionário.</param>
+            <returns>O funcionário correspondente.</returns>
+            <response code="200">Funcionário encontrado.</response>
+            <response code="404">Funcionário não encontrado.</response>
+        </member>
+        <member name="M:CadFuncionario.API.Controllers.FuncionarioController.ObterTodosFuncionarios">
+            <summary>
+            Obtém todos os funcionários.
+            </summary>
+            <returns>Lista de funcionários.</returns>
+            <response code="200">Lista de funcionários obtida com sucesso.</response>
+        </member>
+        <member name="M:CadFuncionario.API.Controllers.FuncionarioController.AtualizarFuncionario(System.Int32,CadFuncionario.Application.DTOs.FuncionarioDTO)">
+            <summary>
+            Atualiza um funcionário existente.
+            </summary>
+            <param name="id">ID do funcionário.</param>
+            <param name="funcionarioDTO">Dados atualizados do funcionário.</param>
+            <returns>O funcionário atualizado.</returns>
+            <response code="200">Funcionário atualizado com sucesso.</response>
+            <response code="400">IDs não coincidem.</response>
+        </member>
+        <member name="M:CadFuncionario.API.Controllers.FuncionarioController.DeletarFuncionario(System.Int32)">
+            <summary>
+            Deleta um funcionário pelo ID.
+            </summary>
+            <param name="id">ID do funcionário.</param>
+            <returns>Status da operação.</returns>
+            <response code="204">Funcionário deletado com sucesso.</response>
+            <response code="404">Funcionário não encontrado.</response>
+        </member>
+    </members>
+</doc>
