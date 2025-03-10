@@ -1,0 +1,15 @@
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+# Muda para o usuário root para instalar pacotes
+USER root
+
+# Define a variável de ambiente para aceitar a EULA
+ENV ACCEPT_EULA=Y
+
+# Instala as ferramentas do SQL Server (incluindo sqlcmd)
+RUN apt-get update && \
+    apt-get install -y mssql-tools && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+
+# Volta para o usuário mssql
+USER mssql
